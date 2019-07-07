@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, ListGroup , ListGroupItem } from 'reactstrap';
 import {connect} from "react-redux";
 import { getItems } from "../actions/boardActions";
+import AppBoardModal from './AppBoardModal';
 import PropTypes from 'prop-types';
-
+// import { withRouter } from 'react-router-dom';
 // import FA from 'react-fontawesome';
 
 class AppBoard extends React.Component {
@@ -33,6 +34,7 @@ class AppBoard extends React.Component {
                         ))}
                     </ListGroup>
                 </Container>
+                <AppBoardModal></AppBoardModal>
             </div>);
     };
 }
