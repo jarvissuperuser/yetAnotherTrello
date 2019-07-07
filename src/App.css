@@ -37,3 +37,7 @@
 .list-group-item-bg-danger{
   background-color:#dc3545;
 }
+
+.hidden {
+  display: none;
+}

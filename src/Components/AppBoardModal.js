@@ -19,10 +19,6 @@ class AppBoardModal extends React.Component {
         item: PropTypes.object.isRequired
     };
 
-
-    componentDidMount() {
-    }
-
     constructor(props){
         super(props);
 

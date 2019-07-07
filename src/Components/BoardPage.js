@@ -1,16 +1,16 @@
 import React from 'react';
 import AppNav from './AppNav';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AppBoard from './AppBoard';
+import BoardLists from './BoardLists';
 
 class BoardPage extends React.Component {
     render() {
         return (
-            <div className="App">
+            <div className="App" >
                 <AppNav>
                 </AppNav>
-                <AppBoard >
-                </AppBoard>
+                <BoardLists>
+                </BoardLists>
             </div>
         );
     }

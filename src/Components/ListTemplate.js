@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import { getItems } from "../actions/listActions";
 import PropTypes from 'prop-types';
 
-class BoardLists extends React.Component {
+class ListTemplate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -50,21 +50,21 @@ class BoardLists extends React.Component {
         const { items } = this.props.item;
         return(
             <div>
-                    <ListGroup className='flex-row' >
+                <ListGroup className='flex-row' >
 
-                        {items.map(({name,id}) => (
+                    {items.map(({name,id}) => (
 
-                            <ListGroupItem className='card col-2 mr-2' key={id}>
-                                <p className=' border-0 mt-2'><b>{name}</b></p>
-                                <p className='card-body'></p>
-                            </ListGroupItem>
-                        ))}
-                        <ListGroupItem className='card col-2 mr-2 ml-2 bg-transparent'>
-                            <input type="text" placeholder='+ Add List'
-                                   className='border-0 col-12 bg-transparent text-white' onFocusCapture={this.onfocus} onBlur={this.onBlur} />
-                            <button className='btn bg-success hidden mt-2' >Create List</button>
+                        <ListGroupItem className='card col-2 mr-2' key={id}>
+                            <p className=' border-0 mt-2'><b>{name}</b></p>
+                            <p className='card-body'></p>
                         </ListGroupItem>
-                    </ListGroup>
+                    ))}
+                    <ListGroupItem className='card col-2 mr-2 ml-2 bg-transparent'>
+                        <input type="text" placeholder='+ Add List'
+                               className='border-0 col-12 bg-transparent text-white' onFocusCapture={this.onfocus} onBlur={this.onBlur} />
+                        <button className='btn bg-success hidden mt-2' >Create List</button>
+                    </ListGroupItem>
+                </ListGroup>
             </div>);
     };
 }
@@ -74,4 +74,4 @@ const mapStateToProp = (state) => ({
     item: state.item
 });
 
-export default connect(mapStateToProp,{getItems})(BoardLists);
+export default connect(mapStateToProp,{getItems})(ListTemplate);
