@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+.App{
+  /*background-color: black;*/
 }
 
 .App-logo {
@@ -9,18 +9,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #2;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /*color: white;*/
 }
 
 .App-link {
-  color: #61dafb;
+  /*color: #61dafb;*/
 }
 
 @keyframes App-logo-spin {
@@ -30,4 +30,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+.list-group-item-bg-primary{
+  background-color:#007bff;
+}
+.list-group-item-bg-danger{
+  background-color:#dc3545;
 }
