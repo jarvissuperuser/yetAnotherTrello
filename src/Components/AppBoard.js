@@ -18,18 +18,22 @@ class AppBoard extends React.Component {
     componentDidMount() {
         this.props.getItems();
     }
-
+    redirect(ev) {
+        window.location.hash = '#/board/' + ev.target.id;
+    }
     render(){
         const { items } = this.props.item;
         return(
             <div>
                 <Container>
                     <ListGroup className='flex-row'>
-                        {items.map(({name,color}) => (
+                        {items.map(({name,color,id}) => (
 
-                            <ListGroupItem className='card col-2 mr-2' color={color}>
+                            <ListGroupItem className='card col-2 mr-2' id={id} color={color} onClick={this.redirect}>
+                                {/*<a href='#/board/1'>*/}
                                 <p className=' border-0 mt-2'><b>{name}</b></p>
                                 <p className='card-body'></p>
+                                {/*</a>*/}
                             </ListGroupItem>
                         ))}
                     </ListGroup>

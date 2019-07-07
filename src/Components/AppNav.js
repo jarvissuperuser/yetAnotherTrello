@@ -15,7 +15,7 @@ class AppNav extends React.Component {
         <div>
             <Navbar className='mb-5 bg-primary' expand='sm'>
                 <Container className=''>
-                    <a className='btn bg-info text-dark mr-2 p-0 d-flex '><FA name='home' size='2x'/></a>
+                    <a className='btn bg-info text-dark mr-2 p-0 d-flex' href='/'><FA name='home' size='2x'/></a>
                     <a className='btn bg-info text-dark mr-2 p-0 d-flex'><FA name='trello' size='2x'/></a>
                     <div className='col-5'></div>
                     <a className="btn bg-info text-dark p-0 d-flex"><FA name='trello' size='2x'/></a>
