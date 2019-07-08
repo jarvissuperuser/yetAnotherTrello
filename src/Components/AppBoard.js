@@ -1,7 +1,7 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, ListGroup , ListGroupItem } from 'reactstrap';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { getItems } from "../actions/boardActions";
 import AppBoardModal from './AppBoardModal';
 import PropTypes from 'prop-types';
@@ -19,7 +19,10 @@ class AppBoard extends React.Component {
         this.props.getItems();
     }
     redirect(ev) {
-        window.location.hash = '#/board/' + ev.target.id;
+        if(ev.target.id) {
+            const route = '#/board/' + ev.target.id;
+            window.location.hash = route;
+        }
     }
     render(){
         const { items } = this.props.item;
@@ -29,7 +32,7 @@ class AppBoard extends React.Component {
                     <ListGroup className='flex-row'>
                         {items.map(({name,color,id}) => (
 
-                            <ListGroupItem className='card col-2 mr-2' id={id} color={color} onClick={this.redirect}>
+                            <ListGroupItem className='card col-2 mr-2' id={id} key={id} color={color} onClick={this.redirect}>
                                 {/*<a href='#/board/1'>*/}
                                 <p className=' border-0 mt-2'><b>{name}</b></p>
                                 <p className='card-body'></p>

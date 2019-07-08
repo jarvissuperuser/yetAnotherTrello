@@ -2,7 +2,7 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ListGroup , ListGroupItem } from 'reactstrap';
 import {connect} from "react-redux";
-import { getItems } from "../actions/listActions";
+import { getLists } from "../actions/listActions";
 import PropTypes from 'prop-types';
 
 class ListTemplate extends React.Component {
@@ -14,12 +14,12 @@ class ListTemplate extends React.Component {
     }
 
     static propTypes = {
-        getItems: PropTypes.func.isRequired,
+        getLists: PropTypes.func.isRequired,
         item: PropTypes.object.isRequired
     };
 
     componentDidMount() {
-        this.props.getItems();
+        this.props.getLists();
     }
 
     onfocus = (ev) => {
@@ -74,4 +74,4 @@ const mapStateToProp = (state) => ({
     item: state.item
 });
 
-export default connect(mapStateToProp,{getItems})(ListTemplate);
+export default connect(mapStateToProp,{getLists})(ListTemplate);

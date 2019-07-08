@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { ListGroup , ListGroupItem } from 'reactstrap';
 import BoardCreate from './BoardCreate';
 import {connect} from "react-redux";
-import { getItems } from "../actions/listActions";
+import { getLists } from "../actions/listActions";
 import PropTypes from 'prop-types';
 
 class BoardLists extends React.Component {
@@ -15,12 +15,12 @@ class BoardLists extends React.Component {
     }
 
     static propTypes = {
-        getItems: PropTypes.func.isRequired,
+        getLists: PropTypes.func.isRequired,
         item: PropTypes.object.isRequired
     };
 
     componentDidMount() {
-        this.props.getItems();
+        this.props.getLists();
     }
 
 
@@ -30,7 +30,7 @@ class BoardLists extends React.Component {
             <div>
                 <ListGroup className='flex-row'>
                     {items.map(({name, id}) => (
-                        <ListGroupItem className='card col-2 mr-2 bg-info'   >
+                        <ListGroupItem className='card col-2 mr-2 bg-info' key={id}  >
                             <p className='card-header border-0 mt-2'><b>{name}</b></p>
                             <input type="text" placeholder='+ Add a Card' className='border-0 bg-transparent text-white'/>
                         </ListGroupItem>
@@ -48,4 +48,4 @@ const mapStateToProp = (state) => ({
     item: state.item
 });
 
-export default connect(mapStateToProp,{getItems})(BoardLists);
+export default connect(mapStateToProp,{getLists})(BoardLists);

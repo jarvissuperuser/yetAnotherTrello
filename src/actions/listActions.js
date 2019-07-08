@@ -1,28 +1,28 @@
-import { GET_ITEMS, GET_ITEM, ADD_ITEM, DEL_ITEM} from "./types";
+import { GET_LISTS, GET_LIST, ADD_LIST, DEL_LIST} from "./types";
 
-export const getItems = () =>{
+export const getLists = () =>{
     return {
-        type: GET_ITEMS
+        type: GET_LISTS
     }
 };
 
-export const addItems = item =>{
+export const addList = item =>{
     return {
-        type: ADD_ITEM,
+        type: ADD_LIST,
         payload: item
     }
 };
 
-export const getItem = (id) => {
+export const getList = (id) => {
     return {
-        type: GET_ITEM,
+        type: GET_LIST,
         payload: id
     }
 };
 
-export const delItem = (id) => {
+export const delList = (id) => {
     return {
-        type: DEL_ITEM,
+        type: DEL_LIST,
         payload: id
     }
 };

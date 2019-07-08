@@ -1,16 +1,25 @@
 import { GET_ITEMS, GET_ITEM, ADD_ITEM, DEL_ITEM} from "./types";
+import db from "../reducer/db";
 
 export const getItems = () =>{
-    return {
-        type: GET_ITEMS
+    return (dispatch) => {
+        db.boards.toCollection().toArray().then(r =>{
+            dispatch({
+                    type: GET_ITEMS,
+                    items: r
+                })
+        })
     }
+
 };
 
 export const addItems = item =>{
-    return {
-        type: ADD_ITEM,
-        payload: item
-    }
+    return(dispatch) => db.boards.add(item).then(()=>{
+        dispatch({
+            type:ADD_ITEM,
+            payload:item
+        })
+    })
 };
 
 export const getItem = (id) => {

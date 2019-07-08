@@ -1,26 +1,26 @@
-import { GET_ITEMS, GET_ITEM, ADD_ITEM, DEL_ITEM} from "./types";
+import { GET_CARD, GET_CARDS, ADD_CARD, DEL_CARD} from "./types";
 
-export const getItems = () =>{
+export const getCards = () =>{
     return {
         type: GET_ITEMS
     }
 };
 
-export const addItems = item =>{
+export const addCards = item =>{
     return {
         type: ADD_ITEM,
         payload: item
     }
 };
 
-export const getItem = (id) => {
+export const getCard = (id) => {
     return {
         type: GET_ITEM,
         payload: id
     }
 };
 
-export const delItem = (id) => {
+export const delCard = (id) => {
     return {
         type: DEL_ITEM,
         payload: id

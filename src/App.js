@@ -15,6 +15,7 @@ class App extends React.Component {
                     <Location path='/' handler={HomePage} />
                     <Location path='/home' handler={HomePage} />
                     <Location path='/board/:id' handler={BoardPage}/>
+                    <Location path='/board' handler={BoardPage}/>
                 </Locations>
             </Provider>
         );

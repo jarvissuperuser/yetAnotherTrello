@@ -1,4 +1,9 @@
-import {GET_ITEM,ADD_ITEM,DEL_ITEM,GET_ITEMS} from "../actions/types";
+import {
+    GET_LIST,
+    GET_LISTS,
+    ADD_LIST,
+    DEL_LIST
+} from "../actions/types";
 
 const lists = {
     lists: [
@@ -8,21 +13,21 @@ const lists = {
 
 export default function (state = lists, action) {
     switch (action.type) {
-        case GET_ITEMS:
+        case GET_LISTS:
             return {
                 ...state
             };
-        case GET_ITEM:
+        case GET_LIST:
             return {
                 ...state,
                 lists: [state.lists.filter(item=>item.id === action.payload)]
             };
-        case ADD_ITEM:
+        case ADD_LIST:
             return {
                 ...state,
                 lists: [...state.lists,action.payload]
             };
-        case DEL_ITEM:
+        case DEL_LIST:
             return {
                 ...state,
                 lists: state.lists.filter(item => item.id !== action.payload)
