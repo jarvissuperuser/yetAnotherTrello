@@ -7,10 +7,12 @@ const boards = {
 };
 
 export default function (state = boards, action) {
+    // console.log(action);
     switch (action.type) {
         case GET_ITEMS:
             return {
-                ...state
+                ...state,
+                items:action.items
             };
         case GET_ITEM:
             return {

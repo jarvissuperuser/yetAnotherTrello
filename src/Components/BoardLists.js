@@ -16,7 +16,7 @@ class BoardLists extends React.Component {
 
     static propTypes = {
         getLists: PropTypes.func.isRequired,
-        item: PropTypes.object.isRequired
+        item: PropTypes.object
     };
 
     componentDidMount() {
@@ -25,11 +25,12 @@ class BoardLists extends React.Component {
 
 
     render(){
-        const { items } = this.props.item;
+        console.log(this.props,'has items');
+        const { lists } = this.props.item;
         return(
             <div>
                 <ListGroup className='flex-row'>
-                    {items.map(({name, id}) => (
+                    {lists.map(({name, id}) => (
                         <ListGroupItem className='card col-2 mr-2 bg-info' key={id}  >
                             <p className='card-header border-0 mt-2'><b>{name}</b></p>
                             <input type="text" placeholder='+ Add a Card' className='border-0 bg-transparent text-white'/>
@@ -45,7 +46,7 @@ class BoardLists extends React.Component {
 
 
 const mapStateToProp = (state) => ({
-    item: state.item
+    item: state.list
 });
 
 export default connect(mapStateToProp,{getLists})(BoardLists);

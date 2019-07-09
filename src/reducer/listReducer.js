@@ -14,8 +14,10 @@ const lists = {
 export default function (state = lists, action) {
     switch (action.type) {
         case GET_LISTS:
+            console.log(action);
             return {
-                ...state
+                ...state,
+                lists:[...action.items]
             };
         case GET_LIST:
             return {
