@@ -1,3 +1,12 @@
+# Yet Another Trello clone
+
+
+### technologies used
+* bootstrap
+* redux
+* dexie(indexed Db)
+* react-strap
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
