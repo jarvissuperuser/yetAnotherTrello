@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { ListGroup, ListGroupItem } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {connect} from "react-redux";
 import { addCards } from "../actions/cardActions";
@@ -101,16 +102,24 @@ class CardCreator extends React.Component {
     }
 
     render(){
+        const { items } = this.props.item;
         return(
             <div>
-                <a onClick={this.onclick} className='mt-1 decor'>
-                    + Add a Card
-                </a>
-                <div className='hidden flex-row'>
-                    <textarea className='col-12' placeholder="Enter title for this card" ></textarea>
-                    <a className='btn bg-success mt-1 text-white' onClick={this.onSave}>Add Card</a>
-                    <a onClick={this.close} className='btn bg-transparent mt-1 pt-0 pb-0' ><span className='fa-2x'>&times;</span></a>
-                </div>
+                <ListGroup>
+                    {items.map(({ name , id }) => (
+                        <ListGroupItem key={id}>
+
+                        </ListGroupItem>
+                    ))}
+                    <a onClick={this.onclick} className='mt-1 decor'>
+                        + Add a Card
+                    </a>
+                    <div className='hidden flex-row'>
+                        <textarea className='col-12' placeholder="Enter title for this card" ></textarea>
+                        <a className='btn bg-success mt-1 text-white' onClick={this.onSave}>Add Card</a>
+                        <a onClick={this.close} className='btn bg-transparent mt-1 pt-0 pb-0' ><span className='fa-2x'>&times;</span></a>
+                    </div>
+                </ListGroup>
             </div>);
     };
 }

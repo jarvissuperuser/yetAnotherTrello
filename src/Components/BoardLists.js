@@ -34,7 +34,7 @@ class BoardLists extends React.Component {
                     {lists.map(({name, id}) => (
                         <ListGroupItem className='card col-2 mr-2 bg-info' key={id}  >
                             <p className='card-header border-0 mt-2'><b>{name}</b></p>
-                            <CardCreator></CardCreator>
+                            <CardCreator pos={id}></CardCreator>
                         </ListGroupItem>
                     ))}
                     <ListGroupItem className='card col-2 mr-2 ml-2 bg-transparent pb-3'>
