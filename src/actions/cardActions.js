@@ -1,28 +1,37 @@
-import { GET_CARD, GET_CARDS, ADD_CARD, DEL_CARD} from "./types";
+import {GET_CARD, GET_CARDS, ADD_CARD, EDIT_CARD} from "./types";
+import db from "../reducer/db";
 
 export const getCards = () =>{
-    return {
-        type: GET_ITEMS
+    return (dispatch) => {
+        db.boards.toCollection().toArray().then(r =>{
+            dispatch({
+                type: GET_CARDS,
+                items: r
+            })
+        })
     }
+
 };
 
 export const addCards = item =>{
-    return {
-        type: ADD_ITEM,
-        payload: item
-    }
+    return(dispatch) => db.boards.add(item).then(()=>{
+        dispatch({
+            type:ADD_CARD,
+            payload:item
+        })
+    })
 };
 
 export const getCard = (id) => {
     return {
-        type: GET_ITEM,
+        type: GET_CARD,
         payload: id
     }
 };
 
-export const delCard = (id) => {
-    return {
-        type: DEL_ITEM,
-        payload: id
-    }
+export const editCard = (item) => {
+    return (dispatch)=> db.cards.update(item,{name:item['name']}).then(()=>dispatch({
+        type: EDIT_CARD,
+        payload:item
+    }));
 };

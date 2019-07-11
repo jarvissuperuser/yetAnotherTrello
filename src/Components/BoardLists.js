@@ -2,6 +2,7 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ListGroup , ListGroupItem } from 'reactstrap';
 import BoardCreate from './BoardCreate';
+import CardCreator from './CardCreator';
 import {connect} from "react-redux";
 import { getLists } from "../actions/listActions";
 import PropTypes from 'prop-types';
@@ -33,7 +34,7 @@ class BoardLists extends React.Component {
                     {lists.map(({name, id}) => (
                         <ListGroupItem className='card col-2 mr-2 bg-info' key={id}  >
                             <p className='card-header border-0 mt-2'><b>{name}</b></p>
-                            <input type="text" placeholder='+ Add a Card' className='border-0 bg-transparent text-white'/>
+                            <CardCreator></CardCreator>
                         </ListGroupItem>
                     ))}
                     <ListGroupItem className='card col-2 mr-2 ml-2 bg-transparent pb-3'>

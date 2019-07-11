@@ -41,3 +41,7 @@
 .hidden {
   display: none;
 }
+
+.decor:hover {
+  text-decoration: underline !important;
+}

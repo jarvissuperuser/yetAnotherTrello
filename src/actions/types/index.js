@@ -21,3 +21,5 @@
  export const GET_CARDS = 'get_cards';
 
  export const DEL_CARD = 'del_card';
+
+ export const EDIT_CARD = 'edit_card';
